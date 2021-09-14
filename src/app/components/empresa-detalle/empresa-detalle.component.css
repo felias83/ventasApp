@@ -1,0 +1,61 @@
+#fondo{
+    background-color: lightgrey;
+    height: 100%;
+    width: 100%;
+    margin:0 auto;
+    display: grid;
+    grid-template-rows: 1fr 1fr 4fr;
+    grid-gap:4%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#participant{
+    font-size: large;
+    background-color: gray;
+    color: #000;
+}
+h3{
+    margin-left: 2%;
+    margin-top: middle ;
+}
+
+#nombre{
+    margin-left: 2%;
+
+}
+
+#detalle{
+    margin-left: 2%;
+    top:0px;
+    max-width: 100%;
+    text-align: justify;
+}
+#info{
+
+    border: 1px black solid;
+    top:0px;
+    max-width: 100%;
+    width:100%;
+    border-collapse: collapse;
+}
+
+th{
+    border: 1px black solid;
+   padding-left: 2%;
+   height: 40px;
+   font-size: larger;
+}
+td{
+    background-color: white;
+    border: 1px black solid;
+    padding-left: 2%;
+    height: 40px;
+    color:dimgray;
+}
+
+thead{
+    width: 100%;
+    background-color: lightgrey;
+    border: 1px black solid;
+}
+

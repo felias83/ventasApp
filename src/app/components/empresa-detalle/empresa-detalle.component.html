@@ -1,0 +1,32 @@
+<div id="fondo">
+    <div id="participant">
+        <h3>Fernando Peraza</h3>
+     </div>
+     <div id="nombre">
+             <h2>Empresa > {{nombre_empresa}}</h2>
+    </div>
+     <div id="detalle">
+         <table id="info">
+             <thead>
+                 <tr>
+                     <th>Nombre Cliente</th>
+                     <th>Personas</th>
+                     <th>Día</th>
+                     <th>Hora</th>
+                     <th>Valor Venta</th>
+                 </tr>
+             </thead>
+             <tbody>
+
+                 <tr  *ngFor="let item of data">
+                     <td>{{item.name}}</td>
+                     <td>{{item.persons}}</td>
+                     <td>{{item.day}}</td>
+                     <td>{{item.hour}}</td>
+                     <td>{{item.finalPrice}}</td>
+                 </tr>
+             </tbody>
+         </table>
+     </div>
+ </div>
+

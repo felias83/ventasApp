@@ -1,0 +1,36 @@
+<div id="fondo">
+   <div id="participant">
+       <h3>Fernando Peraza</h3>
+    </div>
+    <div id="masventas">
+        <div id="empresaMasVentas">
+            <h2>EMPRESA MAS VENTAS</h2>
+            <h1>{{'$'}}{{empresaMaxVentas}}</h1>
+        </div>
+        <div id="mesMasVentas">
+            <h2>MES MAS VENTAS</h2>
+            <h1>{{mesMasVentas}}</h1>
+        </div>
+    </div>
+    <div id="empresas">
+        <table id="info">
+            <thead>
+                <tr>
+                    <th>Nombre Empresa</th>
+                    <th>Total de Ventas</th>
+                    <th>Comisión</th>
+                    <th>Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{group}}
+                <tr  *ngFor="let item of resultData">
+                    <td>{{item.nameAgency}}</td>
+                    <td>{{item.finalPrice}}</td>
+                    <td>{{item.comission}}</td>
+                    <td><a [routerLink]="['/empresas', item.nameAgency ]">Ver Detalle</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
