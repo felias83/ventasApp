@@ -73,7 +73,7 @@ resultMesData:any=[];
           groups[val].finalPrice += item.finalPrice;
           groups[val].nameAgency = item.nameAgency;
           groups[val].comission += (item.finalPrice)*0.025;
-          groups[val].month = new Date(item.datePayment).getMonth();
+
 
           return groups;
       }, {});
