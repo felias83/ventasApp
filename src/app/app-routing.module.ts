@@ -7,7 +7,7 @@ import { EmpresasComponent } from './components/empresas/empresas.component';
 const routes: Routes = [
 { path: 'empresas', component: EmpresasComponent },
 { path: 'empresas/:nombre_empresa', component: EmpresaDetalleComponent },
-{ path: '', redirectTo: '/empresas', pathMatch: 'full' }];
+{ path: '', redirectTo: 'empresas', pathMatch: 'full' }];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
