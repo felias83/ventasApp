@@ -21,12 +21,12 @@ export class EmpresaDetalleComponent implements OnInit {
   getEmpresa(nombre_empresa){
     this.InfoVentasService.getInfo().subscribe(resp=>{
 
-      console.log("this.data",this.data)
+      // console.log("this.data",this.data)
 
     var newArray = resp.filter(function (el) {
       return el.nameAgency == nombre_empresa
     });
-    console.log(newArray);
+    // console.log(newArray);
     this.data=newArray;
     return this.data
 

@@ -26,7 +26,6 @@ resultMesData:any=[];
 
    this.getData();
    this.getMaxVentas();
-
    }
 
   ngOnInit() {}
@@ -62,8 +61,8 @@ resultMesData:any=[];
         r[a.nameAgency] = r[a.nameAgency] || [];
         r[a.nameAgency].push(a);
         return r;
-    }, Object.create(null));
-    console.log("result",result)
+      }, Object.create(null));
+      // console.log("result",result)
 
 ////////////////////////AGRUPANDO POR NOMBRE DE EMPRESA Y CALCULANDO EMPRESA CON MAS VENTAS, COMISION Y TOTAL DE VENTAS////////////////////////////////////////
     var groupByName = function (miarray, prop) {
@@ -73,8 +72,6 @@ resultMesData:any=[];
           groups[val].finalPrice += item.finalPrice;
           groups[val].nameAgency = item.nameAgency;
           groups[val].comission += (item.finalPrice)*0.025;
-
-
           return groups;
       }, {});
     }
@@ -82,9 +79,9 @@ resultMesData:any=[];
     this.resultData = Object.values(groupByName(resp,'nameAgency'));
     const maxVentas = this.resultData.reduce((prev, current) => (prev.finalPrice > current.finalPrice) ? prev : current)
     this.empresaMaxVentas=maxVentas.finalPrice;
-    console.log("maximaventa",  this.empresaMaxVentas);
-    console.log("resultdata",this.resultData);
-    console.log("groupbyName",groupByName(resp,'nameAgency'));
+    // console.log("maximaventa",  this.empresaMaxVentas);
+    // console.log("resultdata",this.resultData);
+    // console.log("groupbyName",groupByName(resp,'nameAgency'));
 
     //////////////////////////////////////////////////CALCULANDO MES CON MAS VENTAS/////////////////////////////
     var groupByDate = function (miarray, prop) {
@@ -98,39 +95,18 @@ resultMesData:any=[];
       }, {});
     }
     this.resultMesData = Object.values(groupByDate(resp,'datePayment'));
-    console.log("resultmes",this.resultMesData);
+
     const mesMax=this.resultMesData.reduce((prev, current) => (prev.finalPrice > current.finalPrice) ? prev : current);
     this.mesMasVentas=mesMax.month.toUpperCase();
-    console.log("mes con mas venta",mesMax.month);
-    console.log("groupbyDate",groupByDate(this.resultMesData,'month'));
-
-
+    // console.log("mes con mas venta",mesMax.month);
+    // console.log("groupbyDate",groupByDate(this.resultMesData,'month'));
+    // console.log("resultmes",this.resultMesData);
 
     });
 
     return this.data
   }
-public groupBy( array , f )
-{
-  var groups = {};
-  array.forEach( function( o )
-  {
-    var group = JSON.stringify( f(o) );
-    groups[group] = groups[group] || [];
-    groups[group].push( o );
-  });
-  return Object.keys(groups).map( function( group )
-  {
-    return groups[group];
-  })
-}
-sum(obj) {
-  return Object.keys(obj).reduce((sum,key)=>sum+parseFloat(obj[key]||0),0);
-}
-  getMaxVentas(){
 
-  }
-
-
+  getMaxVentas(){}
 
 }
