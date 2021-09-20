@@ -5,26 +5,37 @@
     margin:0 auto;
     display: grid;
     grid-template-rows: 1fr 1fr 10fr;
-    grid-gap:2%;
+
     font-family: Arial, Helvetica, sans-serif;
+    grid-template-areas:
+    "area1 "
+    "area2"
+    "area3";
 }
 
 #participant{
     font-size: large;
     background-color: gray;
     color: #000;
+    height:100%;
+    grid-area: area1;
+    align-content:space-between;
+
 }
 h3{
     margin-left: 2%;
-    vertical-align: middle;
+
 }
 
 #nombre{
+    grid-area: area2;
     margin-left: 2%;
+    vertical-align: middle;
 
 }
 
 #detalle{
+    grid-area: area3;
     margin-left: 2%;
     top:0px;
     max-width: 100%;
